@@ -26,6 +26,8 @@
   --container-color: hsl(var(--hue-dark-text-color), 29%, 16%);
   --scroll-bar-color: hsl(var(--hue-dark-text-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-dark-text-color), 12%, 36%);
+  --background-image-color1: hsl(0, 0%, 0%);
+  --background-image-color2: hsl(0, 0%, 7%);
 
   /*========== Font and typography ==========*/
   /* --body-font: "Raleway", sans-serif; */
@@ -88,6 +90,8 @@ body.light-theme {
   --container-color: #fff;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --background-image-color1: hsl(0, 0%, 100%);
+  --background-image-color2: hsl(0, 40%, 97%);
 }
 /*========== Button Dark/Light ==========*/
 .nav_btns {
@@ -117,8 +121,15 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
+  background-image: repeating-linear-gradient(
+    60deg,
+    var(--background-image-color1),
+    var(--background-image-color2),
+    var(--background-image-color1) 5px
+  );
   color: var(--text-color);
   overflow-x: hidden;
+  cursor: url(../img/Pencil-icon.png) 4 4, auto;
 }
 h1,
 h2,
@@ -317,6 +328,58 @@ img {
 }
 .home_scroll-arrow {
   font-size: 1.25rem;
+}
+.wavesize {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: -0.5rem 0 0 1rem;
+}
+.waveanimate {
+  animation-name: wave-animation;
+  animation-duration: 3.2s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+}
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(12deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(12deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  90% {
+    transform: rotate(9deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.inline-title {
+  display: flex;
 }
 /*==================== BUTTONS ====================*/
 .button {
